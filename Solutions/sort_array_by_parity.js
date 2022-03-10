@@ -25,7 +25,7 @@ var sortArrayByParity = function (nums) {
   //   const even=new Array();
   //   const odd =new Array();
   //   nums.forEach(num =>{
-  //       num%2===0?arr.push(num):ae.push(num)
+  //       num%2===0?even.push(num):odd.push(num)
   //   })
   //   return [...even,...odd];
 };
