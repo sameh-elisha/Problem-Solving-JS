@@ -12,7 +12,7 @@ Example:-
  * @param {number[]} nums
  * @return {number[]}
  */
-var sortArrayByParity = function (nums) {
+const sortArrayByParity = (nums) => {
   // Filtering even numbers
   const even = nums.filter((num) => num % 2 === 0);
 
