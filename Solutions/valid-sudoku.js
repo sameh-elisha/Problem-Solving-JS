@@ -1,4 +1,4 @@
-// Runtime beats 86.28% of JavaScript submissions.
+// Runtime beats 93.55% of JavaScript submissions.
 
 /*
 36. Valid Sudoku
