@@ -34,6 +34,7 @@ Explanation: The input board is shown above and the only valid solution is shown
  * @return {void} Do not return anything, modify board in-place instead.
  */
 
+// Check if there are duplicates values.
 const isDuplicatesValues = (array) => {
   arrayFiltering = array.filter((elm) => elm !== ".");
   let checkUniques = new Set(arrayFiltering);
@@ -41,12 +42,15 @@ const isDuplicatesValues = (array) => {
   return false;
 };
 
+// Check Rows is valid
 const rowGood = (board, i) => {
+  // Check Rows if has duplicate values
   let rowCheck = isDuplicatesValues(board[i]);
   if (rowCheck) return false;
   return true;
 };
 
+// Check Column is valid
 const columnGood = (board, ver) => {
   let columnSelect = [];
   for (let j = 0; j < 9; j++) {
@@ -62,6 +66,7 @@ const helperBoxes = (num) => {
   if (num >= 3 && num <= 5) return 3;
   return 6;
 };
+// Check Boxes is valid
 const boxesGood = (board, row, col) => {
   let selectRow = helperBoxes(row);
   let selectCol = helperBoxes(col);
