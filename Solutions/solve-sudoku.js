@@ -1,3 +1,5 @@
+// Still need to improving runtime by using backtracking.
+
 /*
 37. Sudoku Solver
 Link:- 
@@ -89,19 +91,19 @@ const isValidSudoku = (board, row, col) => {
   return rowGood(board, row) && columnGood(board, col) && boxesGood(board, row, col);
 };
 
-let possibilities = [];
+let backToOldFields = [];
 const setNumber = (hor, ver, oldValue, board) => {
   if (oldValue === ".") oldValue = 0;
   oldValue = parseInt(oldValue);
   for (let i = oldValue + 1; i <= 9; i++) {
     board[hor][ver] = i + "";
     if (isValidSudoku(board, hor, ver)) {
-      possibilities.push([hor, ver]);
+      backToOldFields.push([hor, ver]);
       return;
     }
   }
   board[hor][ver] = ".";
-  let [felidX, felidY] = possibilities.pop();
+  let [felidX, felidY] = backToOldFields.pop();
   setNumber(felidX, felidY, board[felidX][felidY], board);
 
   setNumber(hor, ver, board[hor][ver], board);
