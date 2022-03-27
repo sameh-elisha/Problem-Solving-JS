@@ -60,7 +60,7 @@ const columnGood = (board, ver) => {
 const helperBoxes = (num) => {
   if (num >= 0 && num <= 2) return 0;
   if (num >= 3 && num <= 5) return 3;
-  if (num >= 6 && num <= 8) return 6;
+  return 6;
 };
 const boxesGood = (board, row, col) => {
   let selectRow = helperBoxes(row);
